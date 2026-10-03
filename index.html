@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MADDER OFC KEY</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #080808;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    width: 90%;
+    max-width: 360px;
+    padding: 30px 22px;
+    text-align: center;
+    background: #151515;
+    border: 1px solid #ffb900;
+    border-radius: 18px;
+    box-shadow: 0 0 25px #ffb90025;
+}
+
+h1 {
+    color: #ffb900;
+    font-size: 28px;
+    margin-bottom: 22px;
+}
+
+.expiry {
+    color: #ff5555;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.key {
+    background: #080808;
+    border: 1px solid #444;
+    border-radius: 9px;
+    padding: 16px 8px;
+    margin-bottom: 20px;
+    color: #00ff99;
+    font-size: 19px;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+    letter-spacing: 1px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 9px;
+    background: linear-gradient(90deg, #ffb900, #ff7800);
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+#message {
+    color: #00ff99;
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+.footer {
+    color: #777;
+    font-size: 12px;
+    margin-top: 25px;
+}
+</style>
+</head>
+
+<body>
+<div class="card">
+    <h1>MADDER OFC</h1>
+
+    <div class="expiry">
+        EXPIRE: 08/10/2026
+    </div>
+
+    <div class="key" id="key">
+        MTECEADLYKSYYNPA
+    </div>
+
+    <button onclick="copyKey()">
+        📋 COPY CLIPBOARD
+    </button>
+
+    <div id="message"></div>
+
+    <div class="footer">
+        MADDER OFC © 2026
+    </div>
+</div>
+
+<script>
+async function copyKey() {
+    const key = "MTECEADLYKSYYNPA";
+    const message = document.getElementById("message");
+
+    try {
+        await navigator.clipboard.writeText(key);
+        message.textContent = "✓ KEY COPIED SUCCESSFULLY!";
+    } catch (e) {
+        const input = document.createElement("textarea");
+        input.value = key;
+        input.style.position = "fixed";
+        input.style.left = "-9999px";
+        document.body.appendChild(input);
+        input.select();
+
+        const success = document.execCommand("copy");
+        input.remove();
+
+        message.textContent = success
+            ? "✓ KEY COPIED SUCCESSFULLY!"
+            : "Please copy the key manually.";
+    }
+}
+</script>
+</body>
+</html>
